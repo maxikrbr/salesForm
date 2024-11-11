@@ -1,0 +1,27 @@
+<template>
+    <lightning-input
+        label="Opportunity Name"
+        value={opportunityName}
+        onchange={handleNameChange}
+        required
+    ></lightning-input>
+    <lightning-input
+        label="Store URL"
+        value={storeUrl}
+        onchange={handleUrlChange}
+        required
+    ></lightning-input>
+    <lightning-file-upload
+        label="Attachment"
+        file-field-name="Guest_Record_fileupload__c"
+        file-field-value={recordId}
+        accept=".pdf, .docx, .jpg, .png"
+        onuploadfinished={handleFileUpload}
+    >
+    </lightning-file-upload>
+    <lightning-button
+        label="Create Opportunity"
+        onclick={handleCreateOpportunity}
+        variant="brand"
+    ></lightning-button>
+</template>
